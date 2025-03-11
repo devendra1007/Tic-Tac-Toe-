@@ -39,7 +39,7 @@ class TicTacToe:
         self.moves_history = []
         
         # Create stats file if doesn't exist
-        self.stats_file = "tictactoe_stats.json"
+        self.stats_file = os.path.join(os.path.dirname(__file__), "tictactoe_stats.json")
         if not os.path.exists(self.stats_file):
             with open(self.stats_file, "w") as f:
                 json.dump({"games_played": 0, "player_wins": 0, "cpu_wins": 0, "ties": 0}, f)
